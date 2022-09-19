@@ -7,12 +7,16 @@ const productSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        required: [true, "price is required"],
+        required: true,
     },
     description: {
         type: String,
         required: false,
     },
+    inCart: {
+        type: Boolean,
+        defaut: false,
+    }
 });
 const Product = mongoose.model("Product", productSchema);
 module.exports = Product;
